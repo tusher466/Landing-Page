@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: energy-brain-landing
+    env: static
+    region: singapore
+    plan: free
+    staticPublishPath: ./
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html

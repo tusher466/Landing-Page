@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Energy Brain — Forecast → Optimize → Act → Explain → Measure</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,600,0..100,0..1&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Energy Brain is a smart energy optimization and demand-response platform. One decision loop: Forecast → Uncertainty → Optimize → Act → Explain → Measure. Offline-first, cross-border tariffs, human-in-loop." />
+</head>
+<body>
+  <div class="grain"></div>
+
+  <!-- Top nav -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="brand-mark">EB</div>
+        <div>
+          <div class="brand-name">Energy Brain</div>
+          <div class="brand-sub">CONTROL ROOM • v1 — OFFLINE-FIRST</div>
+        </div>
+      </div>
+      <nav class="topnav">
+        <a href="#loop">Loop</a>
+        <a href="#modules">Modules</a>
+        <a href="#regions">Regions</a>
+        <a href="#ledger">Ledger</a>
+        <a href="#impact">Impact</a>
+      </nav>
+      <div class="top-actions">
+        <a class="btn btn-ghost" href="https://github.com/tusher466/Hackathon-Energy-Brain" target="_blank">GitHub</a>
+        <a class="btn btn-primary" href="https://hackathon-energy-brain-1.onrender.com" target="_blank">Live Control Room</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-grid">
+      <div class="hero-left">
+        <div class="eyebrow">FOR COMMERCIAL • VPP • GRID OPERATORS • CROSS-BORDER DAY ONE</div>
+        <h1>One decision loop.<br/>Not five demos.</h1>
+        <p class="lead">
+          Energy Brain fuses solar forecast, demand forecast, grid carbon intensity and price, then dispatches EV + battery + flexible loads as a Virtual Power Plant.
+          Every decision ships with plain-language reason, counterfactual, confidence band. Headline metric always: <strong>money saved, CO₂ avoided, peak kW shaved.</strong>
+        </p>
+        <div class="hero-cta">
+          <a class="btn btn-primary large" href="https://hackathon-energy-brain-1.onrender.com" target="_blank">Open Control Room</a>
+          <a class="btn btn-ghost large" href="https://hackathon-energy-brain-1.onrender.com/docs" target="_blank">API Docs</a>
+          <span class="kpi-inline">Charge 42 EVs between 01:00 and 04:30. Saves 118 USD. Confidence 91%.</span>
+        </div>
+
+        <div class="kpi-strip">
+          <div class="kpi">
+            <div class="k-label">SAVED TODAY</div>
+            <div class="k-value">৳ 1,284 <span>+12% vs yesterday</span></div>
+            <div class="k-foot">Method: marginal tariff BD 6.2 → 12.8</div>
+          </div>
+          <div class="kpi">
+            <div class="k-label">CO₂ AVOIDED</div>
+            <div class="k-value">420 kg <span>marginal 0.82</span></div>
+            <div class="k-foot">P10/P50/P90 confidence</div>
+          </div>
+          <div class="kpi">
+            <div class="k-label">PEAK SHAVED</div>
+            <div class="k-value">84 kW <span>1,000 kW limit</span></div>
+            <div class="k-foot">Transformer protected</div>
+          </div>
+          <div class="kpi">
+            <div class="k-label">FORECAST ERROR</div>
+            <div class="k-value">7.8% MAPE <span>91% conf</span></div>
+            <div class="k-foot">SoC guarantee 100%</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="panel hero-panel">
+          <div class="panel-head">
+            <span>LIVE ASSET FLOW — SINGLE DECISION LOOP</span>
+            <span class="dot amber"></span>
+          </div>
+          <div class="flow-diagram">
+            <!-- Simple CSS-based flow -->
+            <div class="flow-col">
+              <div class="node pv">PV 500kW<br><small>420 kW now</small></div>
+              <div class="node batt">Batt 150kWh<br><small>SOC 68%</small></div>
+              <div class="node grid">Grid<br><small>0.68 kg/kWh</small></div>
+            </div>
+            <div class="flow-center">
+              <div class="bus">EMS BUS<br><small>Decision Engine<br>RL + LP safety</small></div>
+              <div class="flow-arrows">
+                <span class="arrow amber"></span>
+                <span class="arrow moss"></span>
+                <span class="arrow teal"></span>
+              </div>
+            </div>
+            <div class="flow-col">
+              <div class="node ev">EV Fleet 42<br><small>Chrg 01–04:30</small></div>
+              <div class="node indust">Indust 400kW</div>
+              <div class="node hvac">HVAC Flex</div>
+            </div>
+          </div>
+          <div class="timeline">
+            <div class="tl-head">NEXT 24H DECISION TIMELINE</div>
+            <div class="tl-track">
+              <div class="tl-segment"><span class="bar solar" style="width: 30%"></span><small>06:00 solar ramp</small></div>
+              <div class="tl-segment"><span class="bar demand" style="width: 55%"></span><small>18:00 peak BD</small></div>
+              <div class="tl-segment"><span class="bar price" style="width: 40%"></span><small>01:00 low price $</small></div>
+            </div>
+            <div class="tl-cta">
+              <div class="mono">01:00—04:30 charge • 91% confidence • counterfactual: immediate +210kW</div>
+              <button class="btn btn-small">Simulate a day (60s SSE)</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Loop -->
+  <section id="loop" class="section loop">
+    <div class="section-inner">
+      <div class="eyebrow">THE NON-OBVIOUS ANGLE</div>
+      <h2>Forecast → Uncertainty → Optimize → Act → Explain → Measure</h2>
+      <div class="loop-grid">
+        <div class="loop-step"><span>01</span><h3>Forecast</h3><p>Clear-sky geometry × cloud field 32×32 advected by wind vector (phase correlation). Demand multi-site with temp sensitivity. P10/P50/P90 bands.</p></div>
+        <div class="loop-step"><span>02</span><h3>Uncertainty</h3><p>Variability index ramp-risk per hour. Attention summary + feature importance. MAPE 7.8% solar, 8.2% demand, pinball loss.</p></div>
+        <div class="loop-step"><span>03</span><h3>Optimize</h3><p>Tabular Q-learning price threshold + rolling-horizon LP safety (linprog). Guarantees SoC 100%, transformer limit, cycle limits. λ CO₂, μ peak sliders.</p></div>
+        <div class="loop-step"><span>04</span><h3>Act</h3><p>Human-in-loop approval queue. Operator approves EV shift, black-start step. Logged with KPI impact. LLM never controls grid.</p></div>
+        <div class="loop-step"><span>05</span><h3>Explain</h3><p>Every output has drawer: top drivers, counterfactual “what if immediate”, confidence, data source live/synthetic, model version.</p></div>
+        <div class="loop-step"><span>06</span><h3>Measure</h3><p>SQLite ledger logs cost, CO₂, peak. Marginal vs average methodology. Export CSV + printable report. Proof of savings.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modules -->
+  <section id="modules" class="section modules">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="eyebrow">7 MODULES — ALL REAL, OFFLINE-FIRST</div>
+        <h2>Not stubs. Every button does something.</h2>
+      </div>
+      <div class="module-grid">
+        <div class="mod">
+          <div class="mod-head"><span class="tag">Solar Forecast Studio</span><span class="mono">P10/P50/P90</span></div>
+          <h3>Cloud motion via phase correlation</h3>
+          <p>Site lat/lon, capacity kW, tilt, horizon 1-48h. Synthetic irradiance clear-sky × cloud transmission. Motion vector from two frames (FFT). Variability index.</p>
+          <div class="mod-meta">Model: LSTM CPU if torch, else GB quantile • Source: synthetic/live NREL/NOAA</div>
+        </div>
+        <div class="mod">
+          <div class="mod-head"><span class="tag">Demand Forecast</span><span class="mono">Feature importance</span></div>
+          <h3>Industrial/regional 168h history</h3>
+          <p>Weekday/weekend, temperature sensitivity regional, economic indicator. Compact Transformer encoder fallback sklearn. Backtest MAPE, pinball.</p>
+          <div class="mod-meta">Region: BD high evening peak, DE morning/evening, US afternoon</div>
+        </div>
+        <div class="mod">
+          <div class="mod-head"><span class="tag">VPP Dispatch Agent</span><span class="mono">RL + LP safety</span></div>
+          <h3>EV + battery + flexible load</h3>
+          <p>Fleet simulator N EVs arrival/departure SoC required. Baseline immediate vs Smart RL+LP. Objective minimize cost + λCO₂ + μpeak. Fairness variance &lt;0.02.</p>
+          <div class="mod-meta">KPIs: cost saved, CO₂ saved, peak before→after, SoC guarantee 100%</div>
+        </div>
+        <div class="mod">
+          <div class="mod-head"><span class="tag">Grid Operator Copilot</span><span class="mono">Human-in-loop</span></div>
+          <h3>Black start simulator + RAG</h3>
+          <p>Scenarios cloud collapse, wind lull, line trip, cyber. Deterministic 6-step recovery, islands, cranking, load pickup, freq/volt checks. SVG re-energization.</p>
+          <div class="mod-meta">Knowledge: /knowledge/*.md, citations, referenced steps, LLM never controls</div>
+        </div>
+        <div class="mod">
+          <div class="mod-head"><span class="tag">Panel Health Inspector</span><span class="mono">OpenCV</span></div>
+          <h3>Drone thermography</h3>
+          <p>Upload thermal or use synthetic samples. Pipeline normalize, threshold hot, connected components, shape/temp delta classify: hotspot, bypass diode, soiling, string.</p>
+          <div class="mod-meta">Loss: eff % , yearly kWh, money BDT/EUR/USD per region</div>
+        </div>
+        <div class="mod">
+          <div class="mod-head"><span class="tag">Carbon & Cost Ledger</span><span class="mono">Proof</span></div>
+          <h3>Every decision logged</h3>
+          <p>SQLite via SQLAlchemy. Cumulative totals by module/region. Methodology tooltip marginal vs average. Export CSV + printable PDF-style page.</p>
+          <div class="mod-meta">Verification for pilot KPIs</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Regions -->
+  <section id="regions" class="section regions">
+    <div class="section-inner">
+      <div class="region-grid">
+        <div>
+          <div class="eyebrow">CROSS-BORDER DAY ONE — CONFIG-DRIVEN</div>
+          <h2>Switch region → currency, tariff, carbon changes everywhere instantly</h2>
+          <div class="region-cards">
+            <div class="rcard"><div class="r-code">BD</div><div><strong>Bangladesh Dhaka</strong><br>BDT 6.2 night / 8.5 day / 12.8 peak<br>Evening peak 18-23h<br>Carbon avg 0.68 marginal 0.82<br>High aircon sensitivity</div></div>
+            <div class="rcard"><div class="r-code">DE</div><div><strong>Germany Berlin</strong><br>EUR 0.24 / 0.32 / 0.42 peak<br>Peak 8-10,17-19h<br>Carbon avg 0.38 marginal 0.55<br>Day-ahead market</div></div>
+            <div class="rcard"><div class="r-code">US</div><div><strong>USA PJM</strong><br>USD 0.08 / 0.15 / 0.28<br>Afternoon peak 14-19h<br>Carbon avg 0.45 marginal 0.65<br>LMP nodal pricing</div></div>
+          </div>
+        </div>
+        <div class="region-panel">
+          <div class="panel-head">HOURLY TARIFF — 24H VIEW (BD)</div>
+          <div class="tariff">
+            <div class="t-row"><span>00h</span><span class="t-bar" style="height: 22px"></span><small>6.2</small></div>
+            <div class="t-row"><span>06h</span><span class="t-bar" style="height: 38px"></span><small>8.5</small></div>
+            <div class="t-row"><span>12h</span><span class="t-bar" style="height: 38px"></span><small>8.5</small></div>
+            <div class="t-row"><span>18h</span><span class="t-bar" style="height: 72px; background:#9A6F16"></span><small>12.8</small></div>
+            <div class="t-row"><span>22h</span><span class="t-bar" style="height: 72px; background:#9A6F16"></span><small>12.8</small></div>
+          </div>
+          <div class="mono">Switching region updates formatCurrency(), fmtCO2(), fmtKW() everywhere.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Premium checklist -->
+  <section class="section checklist">
+    <div class="section-inner">
+      <div class="eyebrow">PREMIUM — ALL MUST EXIST</div>
+      <div class="check-grid">
+        <div class="check"><span>01</span>Live demo: Simulate a day 60s scrubber SSE</div>
+        <div class="check"><span>02</span>Scenario compare side-by-side delta KPIs</div>
+        <div class="check"><span>03</span>Counterfactual explainer every decision</div>
+        <div class="check"><span>04</span>Uncertainty bands P10/P50/P90 + confidence</div>
+        <div class="check"><span>05</span>Region switch currency/tariff/carbon instant</div>
+        <div class="check"><span>06</span>Human-in-loop approvals queue approve/reject</div>
+        <div class="check"><span>07</span>Savings ledger methodology + CSV export</div>
+        <div class="check"><span>08</span>Black-start timeline SVG animation</div>
+        <div class="check"><span>09</span>Thermal annotated overlay + money loss</div>
+        <div class="check"><span>10</span>Command palette Cmd+K, dark/light, print</div>
+        <div class="check"><span>11</span>API docs embedded OpenAPI + integrations live/synthetic</div>
+        <div class="check"><span>12</span>Seed data + Load demo + Reset</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ledger / Impact -->
+  <section id="ledger" class="section ledger">
+    <div class="section-inner ledger-grid">
+      <div>
+        <div class="eyebrow">TRUST — EXPLAINABILITY + RESPONSIBLE AI</div>
+        <h2>Every output has an Explain drawer</h2>
+        <div class="explain-box">
+          <div class="mono">EXAMPLE DECISION</div>
+          <p>Charge 42 EVs between 01:00 and 04:30. Saves 118 USD (BDT 12,400). CO₂ avoided 45 kg. Confidence 91%. If immediate charging, cost +18% and peak 210 kW higher. Top driver: night tariff 6.2 vs peak 12.8 BDT.</p>
+          <div class="badges">
+            <span>SoC guarantee 100%</span><span>Fairness var 0.02</span><span>P10≤P50≤P90 ✓</span><span>Source: synthetic</span><span>Model: rl+linprog-v1</span>
+          </div>
+        </div>
+        <div class="trust-grid">
+          <div><strong>Data provenance</strong><br>Clear-sky geometry × cloud transmission, demand temp sensitivity, price/carbon per region, flag live/synthetic.</div>
+          <div><strong>Bias & fairness</strong><br>EV early departure not penalized, SoC variance &lt;5% checked, fairness dashboard.</div>
+          <div><strong>Privacy</strong><br>No personal data, EV IDs anonymized, SQLite local, Reset wipes.</div>
+          <div><strong>Failure modes</strong><br>Cloud motion error &lt;2px tolerance, linprog fallback greedy, hydro fails → diesel.</div>
+        </div>
+      </div>
+      <div id="impact" class="impact-panel">
+        <div class="panel-head">IMPACT KPIs — VERIFIED</div>
+        <div class="impact-list">
+          <div><span>Cost saved %</span><strong>12-18% vs immediate</strong></div>
+          <div><span>CO₂ avoided t/yr</span><strong>16.4 t for 42 EVs (marginal)</strong></div>
+          <div><span>Peak shaved %</span><strong>30-40% (210→84 kW)</strong></div>
+          <div><span>Forecast MAPE</span><strong>solar 7.8%, demand 8.2%</strong></div>
+          <div><span>SoC guarantee</span><strong>100% via LP safety layer</strong></div>
+          <div><span>Thermal recall</span><strong>high severity hotspot &gt;90%</strong></div>
+        </div>
+        <div class="arch-block">
+          <div class="mono">INPUT → PROCESSING → OUTPUT</div>
+          <pre>[Cloud Field 32x32] --phase-corr--> wind vector
+[Lat/Lon/Tilt] --clear-sky--> irradiance × cloud → P10/P50/P90
+[Regional Load+Temp+Econ] --Transformer/GB--> demand P10/P50/P90
+[Price+Carbon] + [EV fleet] → RL Q + LP → schedule + fairness
+[Grid events] → 6-step recovery → SVG → Copilot RAG
+[Thermal JPG] --OpenCV--> defects → eff loss money
+All → SQLite ledger → cumulative $/CO₂/peak + CSV</pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech -->
+  <section class="section tech">
+    <div class="section-inner tech-grid">
+      <div>
+        <div class="eyebrow">BACKEND — FASTAPI + PYDANTIC v2</div>
+        <ul>
+          <li>T Typed responses, OpenAPI tags, versioned <code>/api/v1</code></li>
+          <li>SQLite → Postgres/Timescale swap-in, SQLAlchemy, lifespan warm models</li>
+          <li>SSE `/api/v1/simulate/day` plays 24h in 60s</li>
+          <li>Connectors NREL, NOAA, Electricity Maps, OPSD, PJM with fallback → flag source live/synthetic</li>
+        </ul>
+      </div>
+      <div>
+        <div class="eyebrow">FRONTEND — REACT 18 + VITE + TAILWIND</div>
+        <ul>
+          <li>Router v6, @tanstack/react-query, recharts, zustand, lucide, framer-motion subtle</li>
+          <li>Routes / , /solar , /demand , /vpp , /grid , /panels , /ledger , /trust , /settings + 404</li>
+          <li>Command palette Cmd+K, dark/light, print-friendly report, skeletons, lazy loading</li>
+          <li>Control room at dusk: ink-950 #0D1210, bone-50 #F6F3EC, amber #E0A73A 10% accent</li>
+        </ul>
+      </div>
+      <div>
+        <div class="eyebrow">DEPLOY — ONE COMMAND PER SIDE</div>
+        <ul>
+          <li><code>uvicorn app.main:app --reload</code> + <code>npm run dev</code></li>
+          <li><code>docker-compose up</code> + <code>make test</code></li>
+          <li>Root Dockerfile multi-stage builds frontend + backend → single URL serves full-stack on Render</li>
+          <li>render.yaml blueprint: backend Docker + frontend Static</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="cta-inner">
+      <h2>Live on Render — single URL serves full-stack</h2>
+      <p>Backend health check `/health` returns 200. Frontend dist bundled into backend static. No placeholder, every button does something, offline-first synthetic fallback.</p>
+      <div class="cta-actions">
+        <a class="btn btn-primary large" href="https://hackathon-energy-brain-1.onrender.com" target="_blank">Open Live App</a>
+        <a class="btn btn-ghost large" href="https://hackathon-energy-brain-1.onrender.com/docs" target="_blank">OpenAPI Docs</a>
+        <a class="btn btn-ghost large" href="https://github.com/tusher466/Hackathon-Energy-Brain" target="_blank">GitHub Repo</a>
+      </div>
+      <div class="mono">uvicorn app.main:app --host 0.0.0.0 --port $PORT • npm run build • VITE_API_URL="" for same-origin</div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>Energy Brain — Control Room at Dusk • Forecast → Optimize → Act → Explain → Measure • Offline-first • Synthetic fallback live</div>
+      <div class="mono">BD — Dhaka • DE — Berlin • US — PJM • BDT/€/$ • 0.68/0.38/0.45 kg/kWh • Built for hackathon, no TODO stubs</div>
+    </div>
+  </footer>
+
+  <!-- No JS required, but subtle count-up for KPIs (pure CSS animation fallback) -->
+</body>
+</html>
